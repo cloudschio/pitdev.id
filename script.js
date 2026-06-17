@@ -9,6 +9,7 @@ const siteConfig = {
   location: "Surabaya, Indonesia",
   cvLink: "#",
   github: "https://github.com/",
+  profilePhoto: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80",
   socials: [
     { label: "GitHub", url: "https://github.com/" },
     { label: "LinkedIn", url: "https://linkedin.com/" },
@@ -28,7 +29,7 @@ const siteConfig = {
       category: "POS",
       desc: "Sistem kasir dengan manajemen produk, transaksi, stok, laporan penjualan, dan dashboard admin yang mudah dipahami.",
       tags: ["PHP", "MySQL", "Dashboard"],
-      demo: "#",
+      demo: "https://example.com",
       code: "#"
     },
     {
@@ -36,7 +37,7 @@ const siteConfig = {
       category: "E-commerce",
       desc: "Website katalog dan penjualan online dengan desain modern, mobile friendly, serta CTA yang fokus ke konversi.",
       tags: ["HTML", "CSS", "JavaScript"],
-      demo: "#",
+      demo: "https://example.com",
       code: "#"
     },
     {
@@ -44,7 +45,7 @@ const siteConfig = {
       category: "UI/UX",
       desc: "Website personal brand dengan hero premium, section project, testimonial, FAQ, dan dark mode toggle.",
       tags: ["Vercel", "GitHub", "Responsive"],
-      demo: "#",
+      demo: "https://example.com",
       code: "#"
     },
     {
@@ -52,7 +53,7 @@ const siteConfig = {
       category: "Web App",
       desc: "Aplikasi internal untuk manajemen pesanan, status produksi, invoice, dan monitoring progres kerja.",
       tags: ["Admin", "Table", "Workflow"],
-      demo: "#",
+      demo: "https://example.com",
       code: "#"
     },
     {
@@ -60,7 +61,7 @@ const siteConfig = {
       category: "UI/UX",
       desc: "Landing page premium untuk jasa profesional dengan copy yang lebih meyakinkan dan visual yang clean.",
       tags: ["SEO", "CTA", "Branding"],
-      demo: "#",
+      demo: "https://example.com",
       code: "#"
     },
     {
@@ -68,8 +69,31 @@ const siteConfig = {
       category: "Web App",
       desc: "Aplikasi custom order sederhana dengan data pelanggan, detail pesanan, status proses, dan rekap transaksi.",
       tags: ["Custom App", "Forms", "Reports"],
-      demo: "#",
+      demo: "https://example.com",
       code: "#"
+    }
+  ],
+  certificates: [
+    {
+      title: "Responsive Web Design",
+      issuer: "freeCodeCamp",
+      year: "2025",
+      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+      link: "#"
+    },
+    {
+      title: "JavaScript Algorithms and Data Structures",
+      issuer: "freeCodeCamp",
+      year: "2025",
+      image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80",
+      link: "#"
+    },
+    {
+      title: "UI/UX Design Fundamentals",
+      issuer: "Online Course",
+      year: "2024",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+      link: "#"
     }
   ],
   timeline: [
@@ -105,51 +129,15 @@ const siteConfig = {
       name: "Personal Brand Client",
       role: "Freelance Professional"
     }
-  ],
-  articles: [
-    {
-      title: "Cara bikin website personal yang tidak terlihat template",
-      desc: "Fokus pada hierarchy, copy, spacing, dan section yang relevan untuk personal branding developer.",
-      link: "#"
-    },
-    {
-      title: "Landing page premium untuk jasa: elemen yang wajib ada",
-      desc: "Mulai dari hero, credibility block, service cards, project showcase, hingga CTA yang kuat.",
-      link: "#"
-    },
-    {
-      title: "Deploy static portfolio ke GitHub dan Vercel",
-      desc: "Workflow sederhana untuk upload source code, push repo, lalu publish website online dengan cepat.",
-      link: "#"
-    }
-  ],
-  faqs: [
-    {
-      q: "Apakah website ini mudah dikustomisasi?",
-      a: "Ya. Semua data utama disimpan di objek siteConfig, jadi kamu cukup edit teks, link, project, skill, dan section tanpa ubah struktur besar."
-    },
-    {
-      q: "Apakah cocok untuk GitHub dan Vercel?",
-      a: "Cocok. Ini adalah static HTML, CSS, dan JavaScript, jadi sangat mudah di-upload ke repository GitHub lalu di-deploy ke Vercel."
-    },
-    {
-      q: "Apakah bisa ditambah blog atau halaman lain?",
-      a: "Bisa. Kamu dapat pecah jadi beberapa file HTML, atau migrasikan ke Next.js nanti kalau ingin lebih scalable."
-    },
-    {
-      q: "Apakah bisa ganti warna dan font?",
-      a: "Bisa banget. Tinggal ubah variabel CSS di bagian :root untuk warna, radius, shadow, dan nuansa desain."
-    }
   ]
 };
 
 const skillCloud = document.getElementById("skillCloud");
 const filterBar = document.getElementById("filterBar");
 const projectsGrid = document.getElementById("projectsGrid");
+const certificateGrid = document.getElementById("certificateGrid");
 const timelineList = document.getElementById("timelineList");
 const testimonialGrid = document.getElementById("testimonialGrid");
-const blogGrid = document.getElementById("blogGrid");
-const faqList = document.getElementById("faqList");
 
 function renderSkills() {
   skillCloud.innerHTML = siteConfig.skills
@@ -172,7 +160,7 @@ function renderProjects(filter = "Semua") {
     : siteConfig.projects.filter(project => project.category === filter);
 
   projectsGrid.innerHTML = data.map(project => `
-    <article class="project-card reveal show">
+    <article class="project-card reveal show premium-float">
       <div class="project-cover">
         <span class="project-badge">${project.category}</span>
       </div>
@@ -185,8 +173,31 @@ function renderProjects(filter = "Semua") {
           ${project.tags.map(tag => `<span>${tag}</span>`).join("")}
         </div>
         <div class="project-links">
-          <a class="text-link" href="${project.demo}" target="_blank" rel="noopener noreferrer">Live Demo</a>
+          <button class="text-link preview-trigger" data-title="${project.title}" data-url="${project.demo}" type="button">Live Preview</button>
+          <a class="text-link" href="${project.demo}" target="_blank" rel="noopener noreferrer">Buka Demo</a>
           <a class="text-link" href="${project.code}" target="_blank" rel="noopener noreferrer">Source Code</a>
+        </div>
+      </div>
+    </article>
+  `).join("");
+
+  bindPreviewButtons();
+}
+
+function renderCertificates() {
+  certificateGrid.innerHTML = siteConfig.certificates.map(item => `
+    <article class="certificate-card reveal premium-float">
+      <div class="certificate-cover">
+        <img src="${item.image}" alt="${item.title}" width="1200" height="800" loading="lazy">
+        <span class="certificate-badge">${item.year}</span>
+      </div>
+      <div class="certificate-body">
+        <div>
+          <h3>${item.title}</h3>
+          <p>${item.issuer}</p>
+        </div>
+        <div class="certificate-links">
+          <a class="text-link" href="${item.link}" target="_blank" rel="noopener noreferrer">Lihat Sertifikat</a>
         </div>
       </div>
     </article>
@@ -207,7 +218,7 @@ function renderTimeline() {
 
 function renderTestimonials() {
   testimonialGrid.innerHTML = siteConfig.testimonials.map(item => `
-    <article class="testimonial-card reveal">
+    <article class="testimonial-card reveal premium-float">
       <p>“${item.quote}”</p>
       <div class="testimonial-footer">
         <strong>${item.name}</strong>
@@ -215,49 +226,6 @@ function renderTestimonials() {
       </div>
     </article>
   `).join("");
-}
-
-function renderArticles() {
-  blogGrid.innerHTML = siteConfig.articles.map(item => `
-    <article class="blog-card reveal">
-      <h3>${item.title}</h3>
-      <p>${item.desc}</p>
-      <div style="margin-top:18px;">
-        <a class="text-link" href="${item.link}" target="_blank" rel="noopener noreferrer">Baca selengkapnya</a>
-      </div>
-    </article>
-  `).join("");
-}
-
-function renderFaq() {
-  faqList.innerHTML = siteConfig.faqs.map((item, index) => `
-    <article class="faq-item reveal">
-      <button class="faq-question" data-faq="${index}">
-        <span>${item.q}</span>
-        <span>+</span>
-      </button>
-      <div class="faq-answer">
-        <div class="faq-answer-inner">${item.a}</div>
-      </div>
-    </article>
-  `).join("");
-}
-
-function bindFaq() {
-  document.querySelectorAll(".faq-question").forEach(button => {
-    button.addEventListener("click", () => {
-      const answer = button.nextElementSibling;
-      const isOpen = answer.style.maxHeight;
-
-      document.querySelectorAll(".faq-answer").forEach(item => item.style.maxHeight = null);
-      document.querySelectorAll(".faq-question span:last-child").forEach(el => el.textContent = "+");
-
-      if (!isOpen) {
-        answer.style.maxHeight = answer.scrollHeight + "px";
-        button.querySelector("span:last-child").textContent = "−";
-      }
-    });
-  });
 }
 
 function bindFilters() {
@@ -281,6 +249,8 @@ function applyConfig() {
   document.getElementById("contactButton").href = siteConfig.whatsappLink;
   document.getElementById("githubButton").href = siteConfig.github;
   document.getElementById("cvButton").href = siteConfig.cvLink;
+  document.getElementById("waFloat").href = siteConfig.whatsappLink;
+  document.getElementById("profilePhoto").src = siteConfig.profilePhoto;
   document.getElementById("yearNow").textContent = new Date().getFullYear();
 
   const socialWrap = document.getElementById("socialLinks");
@@ -333,17 +303,66 @@ function initReveal() {
   document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 }
 
+function bindPreviewButtons() {
+  const modal = document.getElementById("previewModal");
+  const frame = document.getElementById("previewFrame");
+  const title = document.getElementById("previewTitle");
+  const wrap = document.getElementById("previewFrameWrap");
+
+  document.querySelectorAll(".preview-trigger").forEach(button => {
+    button.addEventListener("click", () => {
+      title.textContent = button.dataset.title;
+      frame.src = button.dataset.url;
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      wrap.className = "preview-frame-wrap desktop";
+      document.querySelectorAll(".device-btn").forEach(btn => btn.classList.remove("active"));
+      document.querySelector('[data-device="desktop"]').classList.add("active");
+    });
+  });
+}
+
+function initPreviewModal() {
+  const modal = document.getElementById("previewModal");
+  const frame = document.getElementById("previewFrame");
+  const closeBtn = document.getElementById("previewClose");
+  const backdrop = document.getElementById("previewBackdrop");
+  const wrap = document.getElementById("previewFrameWrap");
+
+  function closeModal() {
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden", "true");
+    frame.src = "";
+  }
+
+  closeBtn.addEventListener("click", closeModal);
+  backdrop.addEventListener("click", closeModal);
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("open")) {
+      closeModal();
+    }
+  });
+
+  document.querySelectorAll(".device-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".device-btn").forEach(item => item.classList.remove("active"));
+      btn.classList.add("active");
+      wrap.className = `preview-frame-wrap ${btn.dataset.device}`;
+    });
+  });
+}
+
 applyConfig();
 renderSkills();
 renderFilters();
 renderProjects();
+renderCertificates();
 renderTimeline();
 renderTestimonials();
-renderArticles();
-renderFaq();
 bindFilters();
-bindFaq();
 initTheme();
 initMenu();
 initHeader();
+initPreviewModal();
 initReveal();
