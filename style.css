@@ -1015,4 +1015,70 @@ html[data-theme="dark"] .certificate-badge {
     right: 16px;
     bottom: 16px;
   }
+  .typing-role-wrap {
+  margin-top: 8px;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+.typing-role {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  font-size: clamp(1.25rem, 2vw, 1.9rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #4dff88;
+  text-shadow:
+    0 0 6px rgba(77, 255, 136, 0.75),
+    0 0 14px rgba(77, 255, 136, 0.55),
+    0 0 28px rgba(34, 197, 94, 0.45),
+    0 0 44px rgba(34, 197, 94, 0.25);
+  animation: greenGlowPulse 2.2s ease-in-out infinite alternate;
+}
+
+.typing-caret {
+  width: 3px;
+  height: 1.2em;
+  border-radius: 999px;
+  background: #72ff9f;
+  box-shadow:
+    0 0 8px rgba(114, 255, 159, 0.95),
+    0 0 18px rgba(114, 255, 159, 0.6);
+  animation: caretBlink .8s step-end infinite;
+}
+
+@keyframes caretBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes greenGlowPulse {
+  0% {
+    text-shadow:
+      0 0 6px rgba(77, 255, 136, 0.55),
+      0 0 12px rgba(77, 255, 136, 0.35),
+      0 0 22px rgba(34, 197, 94, 0.25);
+  }
+  100% {
+    text-shadow:
+      0 0 8px rgba(77, 255, 136, 0.95),
+      0 0 18px rgba(77, 255, 136, 0.72),
+      0 0 34px rgba(34, 197, 94, 0.55),
+      0 0 52px rgba(34, 197, 94, 0.35);
+  }
+}
+
+@media (max-width: 640px) {
+  .typing-role-wrap {
+    min-height: 56px;
+  }
+
+  .typing-role {
+    font-size: 1.08rem;
+  }
+}
 }
