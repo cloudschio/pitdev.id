@@ -1,20 +1,20 @@
 const siteConfig = {
   name: "Chio",
-  brand: "Chio.dev",
   role: "Full-Stack Web Developer",
-  typingRoles: [
-    "Graphic designer",
-    "freelancer",
-    "web developer"
+  roles: [
+    "Full-Stack Web Developer",
+    "POS System Builder",
+    "E-commerce Developer",
+    "UI & Frontend Crafter"
   ],
-  shortBio: "Saya membantu membangun website, sistem POS, e-commerce, dan produk digital dengan tampilan elegan, cepat, dan fokus ke hasil bisnis.",
-  email: "cloudschio@gmail.com",
-  whatsapp: "+62 881081912121",
-  whatsappLink: "https://wa.me/62881081912121",
+  shortBio:
+    "Saya membantu membangun website, sistem POS, e-commerce, dan produk digital dengan tampilan elegan, cepat, dan fokus ke hasil bisnis.",
+  email: "hello@chio.dev",
+  whatsapp: "+62 812-3456-7890",
+  whatsappLink: "https://wa.me/6281234567890",
   location: "Surabaya, Indonesia",
   cvLink: "#",
   github: "https://github.com/",
-  profilePhoto: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80",
   socials: [
     { label: "GitHub", url: "https://github.com/" },
     { label: "LinkedIn", url: "https://linkedin.com/" },
@@ -46,7 +46,7 @@ const siteConfig = {
       category: "POS",
       desc: "Sistem kasir dengan manajemen produk, transaksi, stok, laporan penjualan, dan dashboard admin yang mudah dipahami.",
       tags: ["PHP", "MySQL", "Dashboard"],
-      demo: "https://example.com",
+      demo: "#",
       code: "#"
     },
     {
@@ -54,7 +54,7 @@ const siteConfig = {
       category: "E-commerce",
       desc: "Website katalog dan penjualan online dengan desain modern, mobile friendly, serta CTA yang fokus ke konversi.",
       tags: ["HTML", "CSS", "JavaScript"],
-      demo: "https://example.com",
+      demo: "#",
       code: "#"
     },
     {
@@ -62,7 +62,7 @@ const siteConfig = {
       category: "UI/UX",
       desc: "Website personal brand dengan hero premium, section project, testimonial, FAQ, dan dark mode toggle.",
       tags: ["Vercel", "GitHub", "Responsive"],
-      demo: "https://example.com",
+      demo: "#",
       code: "#"
     },
     {
@@ -70,7 +70,7 @@ const siteConfig = {
       category: "Web App",
       desc: "Aplikasi internal untuk manajemen pesanan, status produksi, invoice, dan monitoring progres kerja.",
       tags: ["Admin", "Table", "Workflow"],
-      demo: "https://example.com",
+      demo: "#",
       code: "#"
     },
     {
@@ -78,7 +78,7 @@ const siteConfig = {
       category: "UI/UX",
       desc: "Landing page premium untuk jasa profesional dengan copy yang lebih meyakinkan dan visual yang clean.",
       tags: ["SEO", "CTA", "Branding"],
-      demo: "https://example.com",
+      demo: "#",
       code: "#"
     },
     {
@@ -86,31 +86,8 @@ const siteConfig = {
       category: "Web App",
       desc: "Aplikasi custom order sederhana dengan data pelanggan, detail pesanan, status proses, dan rekap transaksi.",
       tags: ["Custom App", "Forms", "Reports"],
-      demo: "https://example.com",
+      demo: "#",
       code: "#"
-    }
-  ],
-  certificates: [
-    {
-      title: "Responsive Web Design",
-      issuer: "freeCodeCamp",
-      year: "2025",
-      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
-      link: "#"
-    },
-    {
-      title: "JavaScript Algorithms and Data Structures",
-      issuer: "freeCodeCamp",
-      year: "2025",
-      image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80",
-      link: "#"
-    },
-    {
-      title: "UI/UX Design Fundamentals",
-      issuer: "Online Course",
-      year: "2024",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
-      link: "#"
     }
   ],
   timeline: [
@@ -130,6 +107,26 @@ const siteConfig = {
       desc: "Mulai dari landing page, undangan digital, portfolio, hingga aplikasi sederhana berbasis PHP dan MySQL."
     }
   ],
+  certificates: [
+    {
+      title: "Frontend Development Certificate",
+      issuer: "Online Course Platform",
+      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+      link: "#"
+    },
+    {
+      title: "UI/UX Design Essentials",
+      issuer: "Design Learning Program",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+      link: "#"
+    },
+    {
+      title: "Web Application Deployment",
+      issuer: "DevOps Basic Training",
+      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
+      link: "#"
+    }
+  ],
   testimonials: [
     {
       quote: "Hasil websitenya terasa rapi, profesional, dan cepat dipahami user. Revisi juga enak karena strukturnya jelas.",
@@ -146,134 +143,179 @@ const siteConfig = {
       name: "Personal Brand Client",
       role: "Freelance Professional"
     }
+  ],
+  faqs: [
+    {
+      q: "Apakah website ini mudah dikustomisasi?",
+      a: "Ya. Semua data utama disimpan di objek siteConfig, jadi kamu cukup edit teks, link, project, skill, dan section tanpa ubah struktur besar."
+    },
+    {
+      q: "Apakah cocok untuk GitHub dan Vercel?",
+      a: "Cocok. Ini adalah static HTML, CSS, dan JavaScript, jadi sangat mudah di-upload ke repository GitHub lalu di-deploy ke Vercel."
+    },
+    {
+      q: "Apakah bisa ditambah blog atau halaman lain?",
+      a: "Bisa. Kamu dapat pecah jadi beberapa file HTML, atau migrasikan ke Next.js nanti kalau ingin lebih scalable."
+    },
+    {
+      q: "Apakah bisa ganti warna dan font?",
+      a: "Bisa banget. Tinggal ubah variabel CSS di bagian :root untuk warna, radius, shadow, dan nuansa desain."
+    }
   ]
 };
 
 const skillCloud = document.getElementById("skillCloud");
 const filterBar = document.getElementById("filterBar");
 const projectsGrid = document.getElementById("projectsGrid");
-const certificateGrid = document.getElementById("certificateGrid");
 const timelineList = document.getElementById("timelineList");
+const certificateGrid = document.getElementById("certificateGrid");
 const testimonialGrid = document.getElementById("testimonialGrid");
+const faqList = document.getElementById("faqList");
 
 function renderSkills() {
-  if (!skillCloud) return;
   skillCloud.innerHTML = siteConfig.skills
     .map(skill => `<span class="skill-pill">${skill}</span>`)
     .join("");
 }
 
 function renderFilters() {
-  if (!filterBar) return;
   filterBar.innerHTML = siteConfig.filters
-    .map((item, index) => `
-      <button class="filter-btn ${index === 0 ? "active" : ""}" data-filter="${item}" type="button">
+    .map(
+      (item, index) => `
+      <button class="filter-btn ${index === 0 ? "active" : ""}" data-filter="${item}">
         ${item}
       </button>
-    `)
+    `
+    )
     .join("");
 }
 
 function renderProjects(filter = "Semua") {
-  if (!projectsGrid) return;
+  const data =
+    filter === "Semua"
+      ? siteConfig.projects
+      : siteConfig.projects.filter(project => project.category === filter);
 
-  const data = filter === "Semua"
-    ? siteConfig.projects
-    : siteConfig.projects.filter(project => project.category === filter);
-
-  projectsGrid.innerHTML = data.map(project => `
-    <article class="project-card reveal show premium-float">
-      <div class="project-cover">
-        <span class="project-badge">${project.category}</span>
-      </div>
-
-      <div class="project-body">
-        <div>
-          <h3>${project.title}</h3>
-          <p>${project.desc}</p>
+  projectsGrid.innerHTML = data
+    .map(
+      project => `
+      <article class="project-card reveal show">
+        <div class="project-cover">
+          <span class="project-badge">${project.category}</span>
         </div>
-
-        <div class="project-tags">
-          ${project.tags.map(tag => `<span>${tag}</span>`).join("")}
+        <div class="project-body">
+          <div>
+            <h3>${project.title}</h3>
+            <p>${project.desc}</p>
+          </div>
+          <div class="project-tags">
+            ${project.tags.map(tag => `<span>${tag}</span>`).join("")}
+          </div>
+          <div class="project-links">
+            <a class="text-link" href="${project.demo}" target="_blank" rel="noopener noreferrer">Live Demo</a>
+            <a class="text-link" href="${project.code}" target="_blank" rel="noopener noreferrer">Source Code</a>
+          </div>
         </div>
-
-        <div class="project-links">
-          <button
-            class="text-link preview-trigger"
-            data-title="${project.title}"
-            data-url="${project.demo}"
-            type="button"
-          >
-            Live Preview
-          </button>
-
-          <a class="text-link" href="${project.demo}" target="_blank" rel="noopener noreferrer">
-            Buka Demo
-          </a>
-
-          <a class="text-link" href="${project.code}" target="_blank" rel="noopener noreferrer">
-            Source Code
-          </a>
-        </div>
-      </div>
-    </article>
-  `).join("");
-
-  bindPreviewButtons();
-}
-
-function renderCertificates() {
-  if (!certificateGrid) return;
-
-  certificateGrid.innerHTML = siteConfig.certificates.map(item => `
-    <article class="certificate-card reveal premium-float">
-      <div class="certificate-cover">
-        <img src="${item.image}" alt="${item.title}" width="1200" height="800" loading="lazy">
-        <span class="certificate-badge">${item.year}</span>
-      </div>
-
-      <div class="certificate-body">
-        <div>
-          <h3>${item.title}</h3>
-          <p>${item.issuer}</p>
-        </div>
-
-        <div class="certificate-links">
-          <a class="text-link" href="${item.link}" target="_blank" rel="noopener noreferrer">
-            Lihat Sertifikat
-          </a>
-        </div>
-      </div>
-    </article>
-  `).join("");
+      </article>
+    `
+    )
+    .join("");
 }
 
 function renderTimeline() {
-  if (!timelineList) return;
+  timelineList.innerHTML = siteConfig.timeline
+    .map(
+      item => `
+      <article class="timeline-item reveal">
+        <div class="timeline-year">${item.year}</div>
+        <div>
+          <h3>${item.title}</h3>
+          <p>${item.desc}</p>
+        </div>
+      </article>
+    `
+    )
+    .join("");
+}
 
-  timelineList.innerHTML = siteConfig.timeline.map(item => `
-    <article class="timeline-item reveal">
-      <div class="timeline-year">${item.year}</div>
-      <div>
-        <h3>${item.title}</h3>
-        <p>${item.desc}</p>
-      </div>
-    </article>
-  `).join("");
+function renderCertificates() {
+  certificateGrid.innerHTML = siteConfig.certificates
+    .map(
+      item => `
+      <article class="certificate-card reveal">
+        <div class="certificate-cover">
+          <img src="${item.image}" alt="${item.title}" loading="lazy" />
+          <span class="certificate-badge">${item.issuer}</span>
+        </div>
+        <div class="certificate-body">
+          <div>
+            <h3>${item.title}</h3>
+            <p>${item.issuer}</p>
+          </div>
+          <div class="certificate-links">
+            <a class="text-link" href="${item.link}" target="_blank" rel="noopener noreferrer">Lihat Sertifikat</a>
+          </div>
+        </div>
+      </article>
+    `
+    )
+    .join("");
 }
 
 function renderTestimonials() {
-  if (!testimonialGrid) return;
+  testimonialGrid.innerHTML = siteConfig.testimonials
+    .map(
+      item => `
+      <article class="testimonial-card reveal">
+        <p>“${item.quote}”</p>
+        <div class="testimonial-footer">
+          <strong>${item.name}</strong>
+          <p>${item.role}</p>
+        </div>
+      </article>
+    `
+    )
+    .join("");
+}
 
-  testimonialGrid.innerHTML = siteConfig.testimonials.map(item => `
-    <article class="testimonial-card reveal premium-float">
-      <p>“${item.quote}”</p>
-      <div class="testimonial-footer">
-        <strong>${item.name}</strong>
-        <p>${item.role}</p>
-      </div>
-    </article>
-  `).join("");
+function renderFaq() {
+  faqList.innerHTML = siteConfig.faqs
+    .map(
+      (item, index) => `
+      <article class="faq-item reveal">
+        <button class="faq-question" data-faq="${index}">
+          <span>${item.q}</span>
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">${item.a}</div>
+        </div>
+      </article>
+    `
+    )
+    .join("");
+}
+
+function bindFaq() {
+  document.querySelectorAll(".faq-question").forEach(button => {
+    button.addEventListener("click", () => {
+      const answer = button.nextElementSibling;
+      const isOpen = answer.style.maxHeight;
+
+      document.querySelectorAll(".faq-answer").forEach(item => {
+        item.style.maxHeight = null;
+      });
+
+      document.querySelectorAll(".faq-question span:last-child").forEach(el => {
+        el.textContent = "+";
+      });
+
+      if (!isOpen) {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+        button.querySelector("span:last-child").textContent = "−";
+      }
+    });
+  });
 }
 
 function bindFilters() {
@@ -288,70 +330,57 @@ function bindFilters() {
 
 function applyConfig() {
   document.title = `${siteConfig.name} — ${siteConfig.role}`;
+  document.getElementById("profileName").textContent = siteConfig.name;
+  document.getElementById("heroDesc").textContent = siteConfig.shortBio;
+  document.getElementById("emailText").textContent = siteConfig.email;
+  document.getElementById("waText").textContent = siteConfig.whatsapp;
+  document.getElementById("locationText").textContent = siteConfig.location;
+  document.getElementById("contactButton").href = siteConfig.whatsappLink;
+  document.getElementById("githubButton").href = siteConfig.github;
+  document.getElementById("cvButton").href = siteConfig.cvLink;
+  document.getElementById("waFloat").href = siteConfig.whatsappLink;
+  document.getElementById("yearNow").textContent = new Date().getFullYear();
 
-  const profileName = document.getElementById("profileName");
-  const heroDesc = document.getElementById("heroDesc");
-  const emailText = document.getElementById("emailText");
-  const waText = document.getElementById("waText");
-  const locationText = document.getElementById("locationText");
-  const contactButton = document.getElementById("contactButton");
-  const githubButton = document.getElementById("githubButton");
-  const cvButton = document.getElementById("cvButton");
-  const waFloat = document.getElementById("waFloat");
-  const profilePhoto = document.getElementById("profilePhoto");
-  const yearNow = document.getElementById("yearNow");
   const socialWrap = document.getElementById("socialLinks");
-
-  if (profileName) profileName.textContent = siteConfig.name;
-  if (heroDesc) heroDesc.textContent = siteConfig.shortBio;
-  if (emailText) emailText.textContent = siteConfig.email;
-  if (waText) waText.textContent = siteConfig.whatsapp;
-  if (locationText) locationText.textContent = siteConfig.location;
-  if (contactButton) contactButton.href = siteConfig.whatsappLink;
-  if (githubButton) githubButton.href = siteConfig.github;
-  if (cvButton) cvButton.href = siteConfig.cvLink;
-  if (waFloat) waFloat.href = siteConfig.whatsappLink;
-  if (profilePhoto) profilePhoto.src = siteConfig.profilePhoto;
-  if (yearNow) yearNow.textContent = new Date().getFullYear();
-
-  if (socialWrap) {
-    socialWrap.innerHTML = siteConfig.socials.map(item => `
-      <a href="${item.url}" target="_blank" rel="noopener noreferrer">${item.label}</a>
-    `).join("");
-  }
+  socialWrap.innerHTML = siteConfig.socials
+    .map(
+      item =>
+        `<a href="${item.url}" target="_blank" rel="noopener noreferrer">${item.label}</a>`
+    )
+    .join("");
 }
 
 function initTheme() {
   const root = document.documentElement;
   const btn = document.getElementById("themeToggle");
-  if (!btn) return;
+  const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+  const defaultTheme = prefersLight ? "light" : "dark";
 
-  const savedTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-  root.setAttribute("data-theme", savedTheme);
+  root.setAttribute("data-theme", defaultTheme);
 
   btn.addEventListener("click", () => {
-    const nextTheme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-    root.setAttribute("data-theme", nextTheme);
+    const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
   });
 }
 
 function initMenu() {
   const menuToggle = document.getElementById("menuToggle");
   const navLinks = document.getElementById("navLinks");
-  if (!menuToggle || !navLinks) return;
 
   menuToggle.addEventListener("click", () => {
     navLinks.classList.toggle("open");
   });
 
   navLinks.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => navLinks.classList.remove("open"));
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+    });
   });
 }
 
 function initHeader() {
   const header = document.getElementById("header");
-  if (!header) return;
 
   window.addEventListener("scroll", () => {
     header.classList.toggle("scrolled", window.scrollY > 10);
@@ -359,105 +388,54 @@ function initHeader() {
 }
 
 function initReveal() {
-  const elements = document.querySelectorAll(".reveal");
-  if (!elements.length) return;
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      }
-    });
-  }, { threshold: 0.12 });
-
-  elements.forEach(el => observer.observe(el));
-}
-
-function bindPreviewButtons() {
-  const modal = document.getElementById("previewModal");
-  const frame = document.getElementById("previewFrame");
-  const title = document.getElementById("previewTitle");
-  const wrap = document.getElementById("previewFrameWrap");
-
-  if (!modal || !frame || !title || !wrap) return;
-
-  document.querySelectorAll(".preview-trigger").forEach(button => {
-    button.addEventListener("click", () => {
-      title.textContent = button.dataset.title || "Preview Project";
-      frame.src = button.dataset.url || "";
-      modal.classList.add("open");
-      modal.setAttribute("aria-hidden", "false");
-      wrap.className = "preview-frame-wrap desktop";
-
-      document.querySelectorAll(".device-btn").forEach(btn => btn.classList.remove("active"));
-      const desktopBtn = document.querySelector('[data-device="desktop"]');
-      if (desktopBtn) desktopBtn.classList.add("active");
-    });
-  });
-}
-
-function initPreviewModal() {
-  const modal = document.getElementById("previewModal");
-  const frame = document.getElementById("previewFrame");
-  const closeBtn = document.getElementById("previewClose");
-  const backdrop = document.getElementById("previewBackdrop");
-  const wrap = document.getElementById("previewFrameWrap");
-
-  if (!modal || !frame || !closeBtn || !backdrop || !wrap) return;
-
-  function closeModal() {
-    modal.classList.remove("open");
-    modal.setAttribute("aria-hidden", "true");
-    frame.src = "";
-  }
-
-  closeBtn.addEventListener("click", closeModal);
-  backdrop.addEventListener("click", closeModal);
-
-  document.addEventListener("keydown", e => {
-    if (e.key === "Escape" && modal.classList.contains("open")) {
-      closeModal();
-    }
-  });
-
-  document.querySelectorAll(".device-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      document.querySelectorAll(".device-btn").forEach(item => item.classList.remove("active"));
-      btn.classList.add("active");
-      wrap.className = `preview-frame-wrap ${btn.dataset.device}`;
-    });
-  });
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 }
 
 function initTypingRole() {
-  const typingTarget = document.getElementById("typingRoleText");
-  if (!typingTarget || !siteConfig.typingRoles || !siteConfig.typingRoles.length) return;
-
-  const words = siteConfig.typingRoles;
-  let wordIndex = 0;
+  const typingEl = document.getElementById("typingRoleText");
+  const roles = siteConfig.roles;
+  let roleIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
 
   function typeLoop() {
-    const currentWord = words[wordIndex];
-    typingTarget.textContent = currentWord.substring(0, charIndex);
+    const currentRole = roles[roleIndex];
+    typingEl.textContent = currentRole.slice(0, charIndex);
 
-    let speed = isDeleting ? 45 : 85;
-
-    if (!isDeleting && charIndex < currentWord.length) {
+    if (!isDeleting) {
       charIndex++;
-    } else if (isDeleting && charIndex > 0) {
-      charIndex--;
-    } else if (!isDeleting && charIndex === currentWord.length) {
-      isDeleting = true;
-      speed = 1400;
-    } else if (isDeleting && charIndex === 0) {
-      isDeleting = false;
-      wordIndex = (wordIndex + 1) % words.length;
-      speed = 320;
-    }
 
-    setTimeout(typeLoop, speed);
+      if (charIndex > currentRole.length) {
+        isDeleting = true;
+        setTimeout(typeLoop, 1300);
+        return;
+      }
+
+      setTimeout(typeLoop, 85);
+    } else {
+      charIndex--;
+
+      if (charIndex < 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        charIndex = 0;
+        setTimeout(typeLoop, 300);
+        return;
+      }
+
+      setTimeout(typeLoop, 45);
+    }
   }
 
   typeLoop();
@@ -467,13 +445,14 @@ applyConfig();
 renderSkills();
 renderFilters();
 renderProjects();
-renderCertificates();
 renderTimeline();
+renderCertificates();
 renderTestimonials();
+renderFaq();
 bindFilters();
+bindFaq();
 initTheme();
 initMenu();
 initHeader();
-initPreviewModal();
 initReveal();
 initTypingRole();
