@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chio — Web Developer Portfolio</title>
-  <meta name="description" content="Portfolio personal premium untuk web developer, menampilkan project, skill, pengalaman, dan kontak." />
+  <meta name="description" content="Portfolio personal premium untuk web developer, menampilkan project, skill, pengalaman, sertifikat, dan kontak." />
   <meta name="theme-color" content="#0b1220" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <a href="#mainContent" class="skip-link">Lewati ke konten</a>
+
   <header class="site-header" id="header">
     <div class="container nav">
       <a href="#home" class="brand">
@@ -25,6 +27,7 @@
           <li><a href="#about">Tentang</a></li>
           <li><a href="#services">Layanan</a></li>
           <li><a href="#projects">Project</a></li>
+          <li><a href="#certificates">Sertifikat</a></li>
           <li><a href="#experience">Pengalaman</a></li>
           <li><a href="#contact">Kontak</a></li>
         </ul>
@@ -38,7 +41,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="mainContent">
     <section class="hero section" id="home">
       <div class="container hero-grid">
         <div class="hero-card reveal">
@@ -82,8 +85,19 @@
         <div class="hero-side">
           <div class="glass-card profile-card reveal">
             <div>
-              <div class="avatar-wrap">
-                <div class="avatar">CH</div>
+              <div class="avatar-wrap profile-extended">
+                <div class="avatar-photo-wrap">
+                  <img
+                    id="profilePhoto"
+                    class="avatar-photo"
+                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80"
+                    alt="Foto profil"
+                    width="500"
+                    height="500"
+                    loading="lazy"
+                  />
+                </div>
+
                 <div class="availability">
                   <span class="dot"></span>
                   <span>Open for selected projects</span>
@@ -166,19 +180,19 @@
         </p>
 
         <div class="services-grid">
-          <article class="service-card reveal">
+          <article class="service-card reveal premium-float">
             <div class="icon-box">01</div>
             <h3>Website Personal Premium</h3>
             <p>Landing page atau portfolio dengan desain eksklusif, section lengkap, animasi halus, dan kesan profesional.</p>
           </article>
 
-          <article class="service-card reveal">
+          <article class="service-card reveal premium-float">
             <div class="icon-box">02</div>
             <h3>POS & Dashboard</h3>
             <p>Sistem transaksi, laporan, stok, data pelanggan, hingga dashboard admin yang rapi dan mudah dipakai.</p>
           </article>
 
-          <article class="service-card reveal">
+          <article class="service-card reveal premium-float">
             <div class="icon-box">03</div>
             <h3>E-commerce & Company Profile</h3>
             <p>Website bisnis dengan katalog produk, CTA kuat, struktur SEO dasar, dan tampilan mobile yang meyakinkan.</p>
@@ -192,11 +206,23 @@
         <span class="eyebrow reveal">Project Pilihan</span>
         <h2 class="section-title reveal">Beberapa karya yang bisa ditampilkan dengan gaya <span class="serif">premium</span></h2>
         <p class="section-text reveal">
-          Project dibuat dinamis dari data JavaScript, jadi kamu gampang ubah isi card tanpa edit struktur HTML satu per satu.
+          Project dibuat dinamis dari data JavaScript, lengkap dengan tombol live preview.
         </p>
 
         <div class="filter-bar reveal" id="filterBar"></div>
         <div class="projects-grid" id="projectsGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="certificates">
+      <div class="container">
+        <span class="eyebrow reveal">Sertifikat</span>
+        <h2 class="section-title reveal">Pelatihan dan pencapaian yang mendukung kredibilitas</h2>
+        <p class="section-text reveal">
+          Section ini cocok untuk sertifikat kursus, bootcamp, workshop, atau pelatihan profesional.
+        </p>
+
+        <div class="certificate-grid" id="certificateGrid"></div>
       </div>
     </section>
 
@@ -224,37 +250,50 @@
       </div>
     </section>
 
-    <section class="section" id="insights">
-      <div class="container">
-        <span class="eyebrow reveal">Insights</span>
-        <h2 class="section-title reveal">Konten tambahan untuk menaikkan personal branding</h2>
-        <p class="section-text reveal">
-          Kamu bisa pakai section ini untuk artikel, catatan project, atau studi kasus singkat.
-        </p>
-
-        <div class="blog-grid" id="blogGrid"></div>
-      </div>
-    </section>
-
-    <section class="section" id="faq">
-      <div class="container">
-        <span class="eyebrow reveal">FAQ</span>
-        <h2 class="section-title reveal">Pertanyaan yang sering ditanyakan</h2>
-        <p class="section-text reveal">
-          FAQ membantu visitor cepat paham layanan, alur kerja, dan jenis project yang kamu terima.
-        </p>
-
-        <div class="faq-list" id="faqList"></div>
-      </div>
-    </section>
-
     <section class="section" id="contact">
       <div class="container contact-grid">
         <div class="content-card contact-card reveal">
-          <span class="eyebrow">Kontak</span>
-          <h2 class="section-title">Siap bikin website yang tampil lebih <span class="serif">mahal</span> dan profesional?</h2>
+          <span class="eyebrow">Form Kontak</span>
+          <h2 class="section-title">Kirim pesan langsung dari website</h2>
           <p class="section-text">
-            Kamu bisa arahkan visitor ke WhatsApp, email, Calendly, atau form external. Untuk static website, ini paling aman dan praktis.
+            Untuk static site, kamu bisa hubungkan form ini ke Formspree atau layanan endpoint form lain tanpa backend sendiri.
+          </p>
+
+          <form
+            class="contact-form"
+            action="https://formspree.io/f/your-form-id"
+            method="POST"
+          >
+            <div class="form-row">
+              <label for="name">Nama</label>
+              <input type="text" id="name" name="name" placeholder="Nama kamu" required>
+            </div>
+
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="email@domain.com" required>
+            </div>
+
+            <div class="form-row">
+              <label for="subject">Subjek</label>
+              <input type="text" id="subject" name="subject" placeholder="Kebutuhan project kamu" required>
+            </div>
+
+            <div class="form-row">
+              <label for="message">Pesan</label>
+              <textarea id="message" name="message" rows="6" placeholder="Tulis pesan di sini..." required></textarea>
+            </div>
+
+            <input type="hidden" name="_subject" value="Pesan baru dari website portfolio">
+            <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+          </form>
+        </div>
+
+        <div class="content-card contact-card reveal">
+          <span class="eyebrow">Kontak Cepat</span>
+          <h2 class="section-title">Alternatif kontak langsung</h2>
+          <p class="section-text">
+            Selain form, pengunjung juga bisa langsung ke WhatsApp, email, atau GitHub.
           </p>
 
           <ul class="contact-list">
@@ -271,14 +310,6 @@
               <strong id="locationText">Surabaya, Indonesia</strong>
             </li>
           </ul>
-        </div>
-
-        <div class="content-card contact-card reveal">
-          <span class="eyebrow">CTA Panel</span>
-          <h2 class="section-title">Mulai dari satu project yang jelas dan terukur</h2>
-          <p class="section-text">
-            Website premium tidak harus ribet. Yang penting positioning jelas, desain kuat, dan pengunjung tahu langkah berikutnya.
-          </p>
 
           <div class="cta-panel">
             <h3 style="font-size:1.35rem; margin-bottom:10px;">Butuh website personal, company profile, atau landing page?</h3>
@@ -294,6 +325,39 @@
       </div>
     </section>
   </main>
+
+  <a
+    href="https://wa.me/6281234567890"
+    class="wa-float"
+    id="waFloat"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat WhatsApp"
+  >
+    WA
+  </a>
+
+  <div class="preview-modal" id="previewModal" aria-hidden="true">
+    <div class="preview-backdrop" id="previewBackdrop"></div>
+    <div class="preview-dialog">
+      <div class="preview-header">
+        <div>
+          <p class="preview-kicker">Live Preview</p>
+          <h3 id="previewTitle">Preview Project</h3>
+        </div>
+        <div class="preview-actions">
+          <button class="device-btn active" data-device="desktop">Desktop</button>
+          <button class="device-btn" data-device="tablet">Tablet</button>
+          <button class="device-btn" data-device="mobile">Mobile</button>
+          <button class="preview-close" id="previewClose" aria-label="Tutup preview">✕</button>
+        </div>
+      </div>
+
+      <div class="preview-frame-wrap" id="previewFrameWrap">
+        <iframe id="previewFrame" title="Preview project"></iframe>
+      </div>
+    </div>
+  </div>
 
   <footer class="footer">
     <div class="container footer-row">
